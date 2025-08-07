@@ -2,7 +2,21 @@
 <html><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>My homepage</title>
-
+<style>
+.collapsible {
+  background-color: white;
+  color: Blue;
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  font-size: 18px;
+}
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+</style>
 </head><body>
 
 <h1>Fangzhou Jin</h1>
@@ -17,7 +31,8 @@
 
 <h2>Events</h2>
 <p><a href="../AGR.html">Seminar on Algebraic Geometry and Ramification</a></p>
-<p><a href="https://yinbang-lin.github.io/alg-geom-tongji.html">Tongji Algebraic Geometry Seminar</a></p>
+<button class="collapsible"><u>Past events</u></button>
+<div class="content">
 <p><a href="../School25.html">2025 Summer School on Hodge modules and D-modules </a></p>
 <p><a href="../AG2024.html">2024 Workshop on Algebraic Geometry</a></p>
 <p><a href="../240727.pdf">Learning seminar on geometric ramification theory</a></p>
@@ -32,6 +47,9 @@
 <p><a href="../workshop2022.html">Tongji-ShanghaiTech Workshop on Algebraic Geometry</a></p>
 <p><a href="../A1loc.html">Workshop on local A1-Brouwer degree</a></p>
 <p><a href="../workshop2021.html">2021 Workshop on algebraic geometry</a></p>
+<p><a href="https://yinbang-lin.github.io/alg-geom-tongji.html">Tongji Algebraic Geometry Seminar</a></p>
+</div>
+
 <hr>
   
 <h2>Research papers</h2>
@@ -104,5 +122,22 @@ Siping Road 1239,<br>
 China</p>
 <p>Office: Ningjing Building 203</p>
 <p>Email: fangzhoujin_at_tongji.edu.cn</p>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
 
 </body></html>
